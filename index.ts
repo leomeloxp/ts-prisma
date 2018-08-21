@@ -42,9 +42,7 @@ const typeDefs = gql`
 // schema.  We'll retrieve books from the "books" array above.
 const resolvers = {
   Query: {
-    users: (): Promise<User[]> =>
-      /** @todo figure out how to fix the type of the query string here */
-      prisma.query.users({}, '{ id name }' as Object)
+    users: (): Promise<User[]> => prisma.query.users({}, null, '{ id name }')
   }
 };
 
