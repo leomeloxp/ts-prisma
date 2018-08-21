@@ -1,0 +1,40 @@
+{
+  "name": "ts-prisma",
+  "version": "1.0.0",
+  "description": "A prisma playgroud/sandbox built using typescript",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leomeloxp/ts-prisma.git"
+  },
+  "main": "build/index.js",
+  "scripts": {
+    "build:js": "tsc --watch",
+    "prisma:docker-up": "docker-compose up -d",
+    "prisma:deploy": "cd prisma; prisma deploy",
+    "start": "npm-run-all --parallel build:* serve",
+    "serve": "nodemon -w ./build build/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "_:apollo": "apollo",
+    "_:prisma": "prisma",
+    "_:tsc": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^2.0.4",
+    "graphql": "^0.13.2",
+    "prisma-binding": "^2.1.4"
+  },
+  "devDependencies": {
+    "@types/graphql": "^0.13.4",
+    "@types/node": "^10.7.1",
+    "apollo": "^1.7.0",
+    "nodemon": "^1.18.3",
+    "npm-run-all": "^4.1.3",
+    "prisma": "^1.14.2",
+    "tslint": "^5.11.0",
+    "typescript": "^3.0.1"
+  }
+}
